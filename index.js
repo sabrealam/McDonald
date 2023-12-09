@@ -62,10 +62,10 @@ function lot(){
     let set = setInterval(() => {
         ltct++;
         img2.innerHTML = lottie[ltct];
-        if(ltct > 3){
+        if(ltct > 4){
             ltct = 0;
         }
-    }, 5000); 
+    }, 10000); 
 }
 
 
