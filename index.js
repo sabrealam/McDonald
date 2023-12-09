@@ -62,7 +62,7 @@ function lot(){
     let set = setInterval(() => {
         ltct++;
         img2.innerHTML = lottie[ltct];
-        if(ltct > lottie.length){
+        if(ltct > 3){
             ltct = 0;
         }
     }, 5000); 
@@ -81,6 +81,7 @@ let item = Array.from(root1);
     count++;
     if(count <= 10){ 
         done.innerHTML = ' YOUR ORDER HAS BEEN PLACED PLEASE WAIT...'; 
+        lot();  
     } 
     if(count > 10){
         done.innerHTML = null; 
@@ -93,7 +94,7 @@ let item = Array.from(root1);
     } 
 },1000);
 
-lot();    
+  
 
 promise(item).then((res)=>{
             lot();
