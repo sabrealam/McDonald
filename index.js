@@ -81,7 +81,6 @@ let item = Array.from(root1);
     count++;
     if(count <= 10){ 
         done.innerHTML = ' YOUR ORDER HAS BEEN PLACED PLEASE WAIT...'; 
-        lot();  
     } 
     if(count > 10){
         done.innerHTML = null; 
@@ -93,8 +92,10 @@ let item = Array.from(root1);
         } 
     } 
 },1000);
-
-  
+setTimeout(() => {
+    lot();    
+}, 10000);
+    
 
 promise(item).then((res)=>{
             lot();
