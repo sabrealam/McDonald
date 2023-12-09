@@ -78,12 +78,12 @@ img {
     border-radius: 5px;
 } 
  .mid {
-    width: 40%;height: 90%;
+    width: 40%;height: 99%;
     border:2px solid rgb(225, 225, 225);
     position: absolute;
     top: 1px;left: 30%;
     padding: 20px;
-    /* border:2px solid red; */
+    border:2px solid red;
  }
  .mid > h3{ 
     text-transform: uppercase;
@@ -130,11 +130,11 @@ img {
     float: right;
     position: absolute;
     top: 1px;right: 0px;
-    border:2px solid rgb(239, 239, 239); 
+    /* border:2px solid red;  */
     overflow: scroll;
 }
 .output{
-    width: 99%;height: 100px;
+    width: 95%;height: 100px;
     margin: auto;
     padding: 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
