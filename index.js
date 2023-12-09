@@ -24,8 +24,7 @@ let root = document.querySelector('.product')
        h4.innerHTML = data[i].name;
        let input = document.createElement('input');
        input.setAttribute('value', data[i].value);
-       input.setAttribute('type', 'checkbox');
-       input.setAttribute('id', 'c');
+       input.setAttribute('type', 'checkbox'); 
        
        div1.append(img)
        div2.append(p,input)
@@ -44,44 +43,61 @@ let done = document.querySelector('.done');
 let progress = document.querySelector('.progress');
 let third = document.querySelector('#status');
 done.innerHTML = '';  
-let count = 0;
+
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+let img2 = document.querySelector('.img2');
+let lottie = [
+    '<iframe src="https://lottie.host/embed/6312177b-4064-4802-af6f-195c8a71e331/FuVRs8SkfL.json"></iframe>',
+    '<iframe src="https://lottie.host/embed/118ded74-9ef3-4f8f-852f-a7912ddc9351/QBORJoHEFv.json"></iframe>',
+    '<iframe src="https://lottie.host/embed/db0fbdd1-e554-4b1e-b392-9c4e2cd41d9b/RczVYCfDp1.json"></iframe>',
+    '<iframe src="https://lottie.host/embed/460ae0c6-1068-4e81-a9d1-a23934400b13/wcjoLuiTIn.json"></iframe>',
+
+]
+
+
+function lot(){
+    let ltct = 0;
+    let set = setInterval(() => {
+        ltct++;
+        img2.innerHTML = lottie[ltct];
+    }, 10000); 
+}
+
+
+
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 function order(){ 
-
-done.innerHTML = ' YOUR ORDER HAS BEEN PLACED PLEASE WAIT...'; 
-let item = Array.from(root1);
-
-console.log(item);
-setInterval(()=>{
+let count = 0;
+img2.innerHTML = lottie[3];
+let item = Array.from(root1); 
+  setInterval(()=>{
     count++;
-    if(count %2 == 1){ done.innerHTML = 'ORDER PROCESSING WAIT FOR 5 MIN ...'; 
-        }else{ done.innerHTML = ''; }
-    },1000)  
- 
-        promise(item).then((res)=>{
+    if(count <= 10){ 
+        done.innerHTML = ' YOUR ORDER HAS BEEN PLACED PLEASE WAIT...'; 
+    } 
+    if(count > 10){
+        done.innerHTML = null; 
+        console.log('checking');
+        if(count % 2 == 1){
+            done.innerHTML = 'ORDER PROCESSING WAIT FOR 5 MIN ...'; 
+        }else{
+            done.innerHTML = ''; 
+        } 
+    } 
+},1000);
+
+lot();    
+
+promise(item).then((res)=>{
+            lot();
         res.forEach((ef)=>{ 
             divcreate(ef);
         })
-   })
- 
-
- 
-  
-   
- 
-
-
-
-
-
-
-
-
-
-
-
+   }) 
  }
  
  function promise(item){
@@ -89,26 +105,21 @@ setInterval(()=>{
     let checkitem = item.filter(function(ele){
         return ele.checked;
     })
-     checkitem.forEach((r)=>{
-        console.log(r);
+     checkitem.forEach((r)=>{ 
         val.push(r.value)
-    })
-    // console.log(checkitem[0].value);
-    // console.log(val); 
-    return new Promise(function(resolve, reject){
-        // console.log('Pending order');
+    }) 
+    return new Promise(function(resolve, reject){ 
        setTimeout(() => {
           resolve(val);
        }, 2000);
     });
  } 
 
- function divcreate(ef){
+function divcreate(ef){
 let name ;
 let price;
     data.forEach((n)=>{
-       if(ef == n.name){
-        // console.log(n.name);
+       if(ef == n.name){ 
           name = document.createElement('p');name.innerHTML   = `NAME  : ${n.name}`;
           price = document.createElement('p');price.innerHTML = `Price : ${n.price}`;
  
@@ -122,7 +133,11 @@ let price;
 
 }
 
+ //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-function view(z){
-    
-}
+
+
+
+
+
+

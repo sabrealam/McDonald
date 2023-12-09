@@ -44,7 +44,7 @@ img {
     width : 100%;height : 100%;
     /* background-color: red; */
 }
-#c {
+#div2 > input {
     width : 25px; 
     aspect-ratio: 1/1; 
 }
@@ -104,9 +104,10 @@ img {
  }
  .img2{
     width: 60%;height: 250px; 
-    border:2px solid rgb(233, 233, 233);
+    border:1px solid rgb(233, 233, 233);
     margin: auto;
     margin-top: 10px;
+    border-radius: 5px;
  }
  .img2>iframe{
     width : 100%;height : 100%;
