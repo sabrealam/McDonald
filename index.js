@@ -86,13 +86,14 @@ let clr= setInterval(()=>{
         done.innerHTML = null; 
         console.log('checking');
         if(count % 2 == 1){
-            done.innerHTML = 'ORDER PROCESSING WAIT FOR 5 MIN ...'; 
+            done.innerHTML = 'ORDER PROCESSING WAIT FOR 40 SEC ...'; 
         }else{
             done.innerHTML = ''; 
         } 
     if(count == 40){
         clearInterval(clr);
         done.innerHTML = 'ORDER PREPARED ...';
+        img2.innerHTML = lottie[3];
     }
     } 
 },1000);
