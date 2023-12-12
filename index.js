@@ -86,7 +86,7 @@ let clr= setInterval(()=>{
         done.innerHTML = null; 
         console.log('checking');
         if(count % 2 == 1){
-            done.innerHTML = 'ORDER PROCESSING WAIT FOR 40 SEC ...'; 
+            done.innerHTML = 'ORDER PROCESSING WAIT FOR 40  ...'; 
         }else{
             done.innerHTML = ''; 
         } 
