@@ -77,7 +77,7 @@ function order(){
 let count = 0;
 img2.innerHTML = lottie[3];
 let item = Array.from(root1); 
-  setInterval(()=>{
+let clr= setInterval(()=>{
     count++;
     if(count <= 10){ 
         done.innerHTML = ' YOUR ORDER HAS BEEN PLACED PLEASE WAIT...'; 
@@ -90,6 +90,10 @@ let item = Array.from(root1);
         }else{
             done.innerHTML = ''; 
         } 
+    if(count == 40){
+        clearInterval(clr);
+        done.innerHTML = 'ORDER PREPARED ...';
+    }
     } 
 },1000);
 setTimeout(() => {
